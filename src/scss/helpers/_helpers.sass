@@ -1,0 +1,92 @@
+@function em($size, $context: 16)
+  @return ($size/$context) * 1em
+
+@function wv($size, $context: 1440px)
+  @return ($size/$context) * 100vw
+
+@function vw($size, $context: 1440px)
+  @return ($size/$context) * 100vw
+
+@function img-url($image)
+  @return url('../img/#{$image}')
+
+=image($image)
+  background-image: img-url($image)
+
+=trans($what: all, $dur: 0.2s, $easing: ease)
+  transition: $what $dur $easing
+
+=smooth-scroll
+  -webkit-overflow-scrolling: touch
+
+=smooth-font
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+=gpu
+  transform: translate3d(0,0,0)
+
+=ie
+  html.ie &
+    @content
+
+=ios($width)
+  +r($width)
+    html.is-ios &
+      @content
+
+=xxl
+  +r(1599)
+    @content
+
+=xxlUp
+  +rmin(1600)
+    @content
+
+=xl
+  +r(1440)
+    @content
+
+=xlUp
+  +rmin(1440)
+    @content
+
+=lg
+  +r(1199)
+    @content
+
+=lgUp
+  +rmin(1200)
+    @content
+
+=md
+  +r(1023)
+    @content
+
+=mdUp
+  +rmin(1024)
+    @content
+
+=sm
+  +r(767)
+    @content
+
+=smUp
+  +rmin(768)
+    @content
+
+=xs
+  +r(599)
+    @content
+
+=xsUp
+  +rmin(600)
+    @content
+
+=xxs
+  +r(399)
+    @content
+
+=mob-first
+  +rmin(600)
+    @content

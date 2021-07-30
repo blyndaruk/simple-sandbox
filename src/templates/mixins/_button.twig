@@ -1,0 +1,7 @@
+{% macro button(config) %}
+  <button class="button {{ config.modificator }}{% if config.modal %} js-modal-link{% endif %}" aria-label="{{ config.text }}">
+    Button
+  </button>
+{% endmacro %}
+
+

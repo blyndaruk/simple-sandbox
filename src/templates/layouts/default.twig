@@ -1,0 +1,38 @@
+{% from "../mixins/_button.twig" import button %}
+{% from "../mixins/_button-link.twig" import button_link %}
+{% from "../mixins/_icon.twig" import icon %}
+
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/app.css" type="text/css">
+  {% if page_css is defined %}
+    <link rel="stylesheet" href="css/{{ page_css }}.css" type="text/css">
+  {% endif %}
+  <title>{{ title | default('Page') }}</title>
+</head>
+<body>
+
+<div class="out">
+  {% block content %}
+  {% endblock %}
+
+
+{#  {% include '@partials/modals/_contact.twig' %}#}
+</div>
+
+<script nomodule src="js/polyfilled.js"></script>
+<script src="js/app.js"></script>
+
+{% if page_script is defined %}
+  <script src="js/{{ page_script }}.js"></script>
+{% endif %}
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

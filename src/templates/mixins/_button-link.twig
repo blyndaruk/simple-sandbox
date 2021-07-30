@@ -1,0 +1,5 @@
+{% macro button_link(config) %}
+  <a href="#" class="button {{ config.modificator }}{% if config.modal %} js-modal-link{% endif %}">
+    Button link
+  </a>
+{% endmacro %}

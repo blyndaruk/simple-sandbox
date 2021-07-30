@@ -1,0 +1,93 @@
+@import "helpers/_helpers-dir";
+@import "variables/_variables-dir";
+
+.audio-page {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.custom-player {
+  opacity: 0.5;
+  transition: opacity .3s ease-in;
+
+  audio {
+    display: none;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+
+    svg {
+      display: block;
+      width: 40px;
+      height: 40px;
+      max-width: 100%;
+      object-fit: cover;
+      transition: fill .25s ease;
+
+      &:hover {
+        fill: #f36314;
+      }
+    }
+
+    button {
+      display: block;
+      flex-shrink: 0;
+      background-color: transparent;
+      margin: 0 10px;
+    }
+  }
+
+  & + & {
+    margin-top: 15vh;
+  }
+
+  &.is-ready {
+    opacity: 1;
+  }
+}
+
+.prev-btn {
+  transform: scale(-1);
+}
+
+.speed {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+  transition: all .25s ease;
+
+  &:hover {
+    border-color: #f36314;
+    color: #f36314;
+  }
+}
+
+.play-btn {
+  svg {
+    &:last-child {
+      display: none;
+    }
+  }
+
+  &.is-active {
+    svg {
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}

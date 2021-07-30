@@ -1,0 +1,22 @@
+body {
+  background: white;
+  line-height: 1.4;
+  font-size: $fz-default;
+  @include smooth-font;
+  @include font-smoothing;
+  @include xs {
+    font-size: 18px;
+  }
+
+  &.no-hover {
+    pointer-events: none;
+  }
+
+  &.is-modal-opened {
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

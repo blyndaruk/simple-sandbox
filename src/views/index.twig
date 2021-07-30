@@ -1,0 +1,49 @@
+{% extends '@templates/layouts/default.twig' %}
+
+  {% block content %}
+    <style>
+      main {
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        align-content: center;
+        text-align: center;
+        padding: 5%;
+      }
+
+      a {
+        display: block;
+        font-size: 30px;
+        text-decoration: none;
+        color: #221221;
+        text-transform: uppercase;
+        margin: 0.5em;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 1025px) {
+        main {
+          height: auto;
+        }
+
+        a {
+          width: 100%;
+          font-size: 24px;
+          margin: 0 0 1em;
+        }
+      }
+
+    </style>
+    <main>
+      {% for item in pages %}
+        <a href="{{ item }}.html" target="_blank">{{ loop.index }}. {{ item }}</a>
+      {% endfor %}
+    </main>
+  {% endblock %}
+
