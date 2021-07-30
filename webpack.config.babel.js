@@ -192,6 +192,11 @@ const config = {
                 'mixins': path.join(__dirname, './src/templates/mixins'),
                 'pages': path.join(__dirname, './src/templates/pages'),
               },
+              functions: {
+                fileExtension() {
+                  return isProduction ? 'php' : 'html';
+                }
+              },
               // debug: !isProduction,
               data: (context) => {
                 const contextPath = context.resourcePath;
@@ -241,10 +246,6 @@ const config = {
       {
         from: "./src/img",
         to: "./img"
-      },
-      {
-        from: "./src/video",
-        to: "./video"
       },
       {
         from: "./src/fonts",

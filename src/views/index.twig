@@ -42,7 +42,7 @@
     </style>
     <main>
       {% for item in pages %}
-        <a href="{{ item }}.html" target="_blank">{{ loop.index }}. {{ item }}</a>
+        <a href="{{ item }}.{{ fileExtension() }}" target="_blank">{{ loop.index }}. {{ item }}</a>
       {% endfor %}
     </main>
   {% endblock %}
